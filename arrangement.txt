@@ -1,4 +1,15 @@
 ﻿[함수]
+
+.append()    기존 배열에 값 추가하기
+
+.find()     원하는 값의 인덱스 값 찾기
+    ex)
+    data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+    atpos = data.find('@')
+    print(atpos)
+    # 21
+
+
 정규표현식을 사용하기 위해서는 re(regular expression) 모듈을 import
 
     rstrip()    오른쪽부터 정해진 값 삭제 (기본값 공백)
@@ -6,7 +17,7 @@
                 str = "88888888this is string example....wow!!!8888888";
                 print str.rstrip('8');
 
-                88888888this is string example....wow!!!
+                #88888888this is string example....wow!!!
 
     re.search()     true or false 를 반환
 
@@ -45,6 +56,7 @@ deque(from collections)
     deque_list.rotate(2)
     print(deque_list)
 
+    #
     deque([0, 1, 2, 3, 4])
     deque([3, 4, 0, 1, 2])
 
@@ -55,7 +67,7 @@ reversed
 
     print(a,list(reversed(a)))
 
-    [0, 1, 2, 3, 4] [4, 3, 2, 1, 0]
+    #[0, 1, 2, 3, 4] [4, 3, 2, 1, 0]
 
 Counter (from collections)
     Sequence type(연속적인 자료) 에서 data element(데이터 요소) 를 찾아
@@ -71,7 +83,7 @@ reduce
 	from functools import reduce
 	print(reduce(lambda x, y: x+y. [1,2,3]))
 
-	계산과정 
+	#계산과정
 	1+2 = 3
 	3 +3 =6
 	print 6
@@ -85,7 +97,7 @@ map
 	ex = [1, 2, 3]
 	print(list(map(f, ex)))
 	
-	[1, 4, 9]
+	#[1, 4, 9]
 
 split
     문자열을 특정 값에 따라 나누는 것
@@ -95,7 +107,7 @@ split
 
     print(example.split(","))
 
-    ['a', 'b', 'c']
+    #['a', 'b', 'c']
 
 join
     배열을 문자열로 바꿔주는 것
@@ -103,7 +115,7 @@ join
     list = ["a", "b", "c"]
     print(":".join(list))
 
-    a:b:c
+    #a:b:c
 
 zip
     같은 인덱스끼리 묶어 주는 것
@@ -114,6 +126,7 @@ zip
     for a, b in zip(alist, blist):
     	print(a, b)
 
+    #
     a1 b1
     a2 b2
     a3 b3
@@ -127,6 +140,7 @@ enumerate
     for i, (a, b) in enumerate(zip(alist, blist)):
         print(i, a, b)
 
+    #
     0 a1 b1
     1 a2 b2
     2 a3 b3
@@ -146,7 +160,7 @@ Lambda
     f = lambda x, y: x + y
     print(f(1, 4))
 
-    5
+    #5
 
 asterisk
 	*을 사용
@@ -162,6 +176,7 @@ asterisk
 
     asterisk_test(1,2,3,4,5,6)
 
+    #
 	1 (2, 3, 4, 5, 6)
     <class 'tuple'>
 
@@ -170,6 +185,7 @@ asterisk
     print(a, kargs)
     print(type(kargs))
 
+    #
     asterisk_test(1, b=2, c=3, d=4, e=5, f=6)
 
     1 {'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6}
@@ -182,6 +198,7 @@ asterisk
 
     asterisk_test(1, (2,3,4,5,6))
 
+    #
     1 2 3 4 5 6
     <class 'tuple'>
 
@@ -192,6 +209,7 @@ asterisk
     data = {"d":1 , "c":2, "b":3, "e":56}
     asterisk_test(10, **data)
 
+    #
     10 3 2 1 56
     //*data로 하면
     10 d c b e
@@ -203,6 +221,7 @@ unpacking
 
     a, b, c = example.split(",")​
 
+    #
     a= "ㄱ"
     b="ㄴ"
     c="ㄷ"
@@ -210,3 +229,10 @@ unpacking
 list comprehension
     가로나 중가로등 안에서 계산을 한 번에 하는 방법
     ex)
+
+:   원하는 부분만 뽑아올때
+    ex)
+    data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+    host = data[0 : 5]
+    print(host)
+    #From

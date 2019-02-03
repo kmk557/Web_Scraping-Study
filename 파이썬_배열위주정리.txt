@@ -16,39 +16,6 @@ rstrip()    오른쪽부터 정해진 값 삭제 (기본값 공백)
 
                 #88888888this is string example....wow!!!
 
-파이썬에서 정규 표현식을 지원하는 re 모듈
-
-    re.compile('ab*')   미리 정규식을 정한다 (= 정규식을 컴파일 한다)
-        DOTALL(S) - . 이 줄바꿈 문자를 포함하여 모든 문자와 매치할 수 있도록 한다.
-                    (원래는 . \n을 포함하지 못한다.)
-
-        IGNORECASE(I) - 대소문자에 관계없이 매치할 수 있도록 한다.
-
-        MULTILINE(M) - 메타 문자를 문자열의 각 라인마다 적용해 준다. (^, $ 메타문자의 사용과 관계가 있는 옵션이다)
-
-                        ^ 메타 문자를 문자열 전체의 처음이 아니라 각 라인의 처음으로 인식시키고 싶은 경우도 있을 것이다.
-                         이럴 때 사용할 수 있는 옵션이 바로 re.MULTILINE 또는 re.M이다.
-
-        VERBOSE(X) - verbose 모드를 사용할 수 있도록 한다. (복잡한 정규식을 보기 편하게 만들수 있고 주석등을 사용할 수 있게된다.)
-
-                        re.VERBOSE 옵션을 사용하면 문자열에 사용된 whitespace는 컴파일 시 제거된다
-                        (단 [ ] 내에 사용된 whitespace는 제외).
-                        그리고 줄 단위로 #기호를 이용하여 주석문을 작성할 수 있다.
-
-            옵션을 사용할 때는 re.DOTALL처럼 전체 옵션명을 써도 되고 re.S처럼 약어를 써도 된다.
-
-            ex) p = re.compile('a.b', re.DOTALL)
-                m = p.search("5 python")
-
-    re.match()	문자열의 처음부터 정규식과 매치되는지 조사한다.
-                처음부터 시작해서 가장 먼저 정규식과 매치되지 않는 곳을 찾는다
-
-    re.search()     true or false 를 반환
-
-    re.findall()    찾은 값을 리스트 형태로 반환
-
-    re.finditer()	정규식과 매치되는 모든 문자열(substring)을 iterator 객체로 리턴한다
-
 
 defaultdict(from collections)
     일반 diconary는 존재하지 않는 키값을 입력하면 에러를 호출
@@ -171,7 +138,7 @@ enumerate
     1 a2 b2
     2 a3 b3
 
-[방식]
+[방식?]
 
 """문자"""
     "" "" 또는 " " 는 엔터를 치면 문자열이 끊기지만

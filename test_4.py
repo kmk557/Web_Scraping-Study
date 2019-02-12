@@ -1,6 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import os
+import requests
 
 
 def crawl_webtoon(episode_url):
@@ -30,10 +31,10 @@ def crawl_webtoon(episode_url):
         image_file_data = requests.get(image_file_url, headers=headers).content
                 #byte 타입
 
-            open(image_file_path, 'wb').write(image_file_data)
+        open(image_file_path, 'wb').write(image_file_data)
         #print(image_file_url, type(image_file_url))
         print('Completed !')
 
 if __name__ == '__main__':
-    episode_url = 'https://toonkor.land/4%EC%BB%B7%EC%9A%A9%EC%82%AC_%ED%8A%B9%EB%B3%84_%EC%9B%90%EC%9E%91_2%ED%99%94.html'
-    crawl_naver_webtoon(episode_url)
+    episode_url = 'https://toonkor.land/%ED%99%94%EC%82%B0%EC%A0%84%EC%83%9D_1%ED%99%94.html'
+    crawl_webtoon(episode_url)

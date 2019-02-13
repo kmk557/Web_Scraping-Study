@@ -1,0 +1,17 @@
+import os
+    글로벌 변수 __file__
+        해당 코드가 저장된 파일의 이름을 반환한다.
+        ex) code.py
+
+    os.path.realpath("code.py")
+        파일 이름을 인자로 주면 해당 파일의 절대 경로를 반환하여 준다.
+        ex) C:\Users\code.py
+
+    os.path.dirname("C:\Users\code.py")
+        파일의 경로를 인자로 주면 해당 파일이 속한 디렉터리의 경로를 반환하여 준다.
+        ex) C:\Users
+
+    os.listdir("C:\Users")
+        디렉터리 경로를 인자로 주면 해당 디렉터리 내에 존재하는 모든 파일 및 디렉터리를 리스트로 반환한다.
+        ex)["code.py","qwe.jpg","asd.jpg","zxc.jpg"]
+

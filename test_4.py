@@ -5,7 +5,7 @@ import requests
 
 
 def crawl_webtoon(episode_url):
-    driver = webdriver.Chrome('D:/PycharmProjects/chromedriver')
+    driver = webdriver.Chrome('D:\PycharmProjects\Web_Scraping-Study\chromedriver')
     # 크롬드라이버를 통해 크롬을 킨다.
     # driver.implicitly_wait(3)
     # 데이터 불러오는 시간 3초로 정한다.
@@ -17,8 +17,9 @@ def crawl_webtoon(episode_url):
     re = soup.find("div", id="toon_img")
     ep_title = ' '.join(soup.select('div.view-wrap h1')[0].text.split())
 
+#사이트 도메인이 바뀌었는지 확인하자.
     for img_tag in re.select('img'):
-        image_file_url = 'https://toonkor.pw' + img_tag['src']
+        image_file_url = 'https://toonkor.land' + img_tag['src']
         image_dir_path = os.path.join(os.path.dirname(__file__), ep_title)
         image_file_path = os.path.join(image_dir_path, os.path.basename(image_file_url))
         if not os.path.exists(image_dir_path):

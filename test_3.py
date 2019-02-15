@@ -4,9 +4,7 @@ from PIL import Image
 
 webtoon_route = "D:\PycharmProjects\Web_Scraping-Study\화산전생 1화"
 list = webtoon_route.split('\\')
-# webtoon_name = re.findall("Pycharm", webtoon_route)
 
-# print(os.listdir(webtoon_route))
 img_list = [i for i in os.listdir(webtoon_route) if i.endswith(".jpg")]
 open_img_list = []
 pdf_name = list[-1]+".pdf"

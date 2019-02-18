@@ -16,4 +16,4 @@ for img in img_list:
     im = Image.open(path)
     open_img_list.append(im)
 
-# open_img_list[0].save(pdf_name, "PDF", resolution = 100.0, save_all = True, append_images = open_img_list)
+open_img_list[0].save(pdf_name, "PDF", resolution = 100.0, save_all = True, append_images = open_img_list)

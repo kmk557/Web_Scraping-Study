@@ -49,3 +49,33 @@ HTTP    (통신 방식)
     자신의 소켓을 데이터 통신 방식과 주소 체계를 정한 후 생성
 
     통신할 상대의 소켓 (주소와 포트) 설정
+
+도메인 다루는 모듈 tld
+
+    from tld import get_tld
+
+    res = get_tld("http://some.subdomain.google.co.uk", as_object=True)
+
+    res
+    # 'co.uk'
+
+    res.subdomain
+    # 'some.subdomain'
+
+    res.domain
+    # 'google'
+
+    res.tld
+    # 'co.uk'
+
+    res.fld
+    # 'google.co.uk'
+
+    res.parsed_url
+    # SplitResult(
+    #     scheme='http',
+    #     netloc='some.subdomain.google.co.uk',
+    #     path='',
+    #     query='',
+    #     fragment=''
+    # )

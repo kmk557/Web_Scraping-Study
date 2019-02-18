@@ -35,7 +35,7 @@ def crawl_webtoon(episode_url):
         open(image_file_path, 'wb').write(image_file_data)
         #print(image_file_url, type(image_file_url))
         print('Completed !')
-
+        
 if __name__ == '__main__':
     episode_url = 'https://toonkor.land/%ED%99%94%EC%82%B0%EC%A0%84%EC%83%9D_1%ED%99%94.html'
     crawl_webtoon(episode_url)

@@ -2,7 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import os
 import requests
-
+import tld
 
 def crawl_webtoon(episode_url):
     driver = webdriver.Chrome('D:\PycharmProjects\Web_Scraping-Study\chromedriver')
@@ -14,12 +14,15 @@ def crawl_webtoon(episode_url):
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
+    domain = tld.get_tld(episode_url)
+    #도메인 끝 부분
+
     re = soup.find("div", id="toon_img")
     ep_title = ' '.join(soup.select('div.view-wrap h1')[0].text.split())
 
 #사이트 도메인이 바뀌었는지 확인하자.
     for img_tag in re.select('img'):
-        image_file_url = 'https://toonkor.land' + img_tag['src']
+        image_file_url = 'https://toonkor.' + domain + img_tag['src']
         image_dir_path = os.path.join(os.path.dirname(__file__), ep_title)
         image_file_path = os.path.join(image_dir_path, os.path.basename(image_file_url))
         if not os.path.exists(image_dir_path):
@@ -37,5 +40,5 @@ def crawl_webtoon(episode_url):
         print('Completed !')
         
 if __name__ == '__main__':
-    episode_url = 'https://toonkor.land/%ED%99%94%EC%82%B0%EC%A0%84%EC%83%9D_1%ED%99%94.html'
+    episode_url = 'https://toonkor.link/%EB%82%98_%ED%98%BC%EC%9E%90%EB%A7%8C_%EB%A0%88%EB%B2%A8%EC%97%85_50%ED%99%94.html'
     crawl_webtoon(episode_url)

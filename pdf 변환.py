@@ -2,7 +2,7 @@ import os
 import re
 from PIL import Image
 
-webtoon_route = "D:\PycharmProjects\Web_Scraping-Study\화산전생 1화"
+webtoon_route = "D:\PycharmProjects\Web_Scraping-Study\나 혼자만 레벨업 50화"
 list = webtoon_route.split('\\')
 
 img_list = [i for i in os.listdir(webtoon_route) if i.endswith(".jpg")]

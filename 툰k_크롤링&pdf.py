@@ -37,6 +37,8 @@ def crawl_webtoon(episode_url):
         image_file_data = requests.get(image_file_url, headers=headers).content
                 #byte 타입
         pil_image = Image.frombytes('RGB', (719, 3004 ), image_file_data)
+        #bytes 형태일때 이미지 크기 값을 찾는 법을 알아보자.
+        
         open_img_list = []
 
         open_img_list.append(pil_image)
